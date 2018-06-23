@@ -20,19 +20,23 @@ module ApplicationHelper
   			title: "About Me"
   		},
   		{
-  			url: #,
+  			url: '#',
   			title: "Donate"
   		},
   		{
   			url: archive_path,
   			title: "Archive"
-  		}
+  		},
   		{
   			url: contact_path,
   			title: "Contact"
   		}
   	]
   	end
+
+    def active? path
+		"active" if current_page? path
+	  end
 
 
   	def nav_helper style, tag_type
