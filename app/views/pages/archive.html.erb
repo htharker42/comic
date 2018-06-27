@@ -1,18 +1,36 @@
-<h1 class="cover-heading">Archive</h1>
-<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-  <div class="row">
-  <div class="col-md-4">
-    <% @comics.each do |c| %>
-      <div class="card" style="width: 18rem;">
-        <%= image_tag c.thumb_image, alt: c.title %>
-        <div class="card-body">
-          <h5 class="card-title"><%= c.title %></h5>
-          <p>Published <%= distance_of_time_in_words(c.created_at, Time.now) %> ago</p>
-		      </p>
-        </div>
-      </div>
-
-      <% end %>
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Archives</h1>
+      <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+      <p>
+        <a href="#" class="btn btn-primary my-2">Start from the Begining</a>
+        <a href="#" class="btn btn-secondary my-2">Latest</a>
+      </p>
     </div>
-  </div>
-</p>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <% @comics.each do |c| %>
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <%= image_tag c.thumb_image, alt: c.title, class:"card-img-top" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= c.title %></h5>
+              <p class="card-text"><%= c.description %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div> -->
+                <small class="text-muted">Published <%= distance_of_time_in_words(c.created_at, Time.now) %> Ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%end%>
+      </div>
+  </main>
