@@ -1,5 +1,18 @@
 <h1 class="cover-heading">Archive</h1>
 <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-<p class="lead">
-  <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+  <div class="row">
+  <div class="col-md-4">
+    <% @comics.each do |c| %>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag c.thumb_image, alt: c.title %>
+        <div class="card-body">
+          <h5 class="card-title"><%= c.title %></h5>
+          <p>Published <%= distance_of_time_in_words(c.created_at, Time.now) %> ago</p>
+		      </p>
+        </div>
+      </div>
+
+      <% end %>
+    </div>
+  </div>
 </p>
