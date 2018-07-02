@@ -60,5 +60,6 @@ gem 'jquery-ui-rails'
 gem 'friendly_id', '~> 5.1.0'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'bootstrap', '~> 4.1.0'
+gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 
 gem 'harker_view_tool', git: 'https://github.com/htharker42/harker_view_tool'

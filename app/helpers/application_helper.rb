@@ -2,7 +2,7 @@ module ApplicationHelper
 
 
   	def copyright_generator
-  		HarkerViewTool::Renderer.copywrite 'Peggy Smith', 'All Rights Reserved'
+  		HarkerViewTool::Renderer.copywrite 'Peggy Dolaghan', 'All Rights Reserved'
   	end
 
     def nav_items

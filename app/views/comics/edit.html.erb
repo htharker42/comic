@@ -1,0 +1,15 @@
+<div class="row">
+        <div class="col-md-8 blog-main">
+
+           <h1>Editing Comic</h1>
+
+			<%= render 'form', comic: @comic %>
+
+			<%= link_to 'Show', @comic %> |
+			<%= link_to 'Back', comic_path %>
+
+
+        </div><!-- /.blog-main -->
+
+        <%= render 'shared/sidebar' %>
+    </div>
