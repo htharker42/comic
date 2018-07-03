@@ -2,5 +2,13 @@
 <p> <%= @comic.title %> </p>
 <%= @comic.title %>
 <hr>
+<button type="button" class="btn btn-sm btn-outline-secondary">
+    <%= link_to "Edit", edit_comic_path(@comic.id) %> 
+</button>
+<button type="button" class="btn btn-sm btn-outline-secondary">
+   <%= link_to "Delete", comic_path(@comic.id), method: :delete, data: {confirm: 'Delete Comic?'} %>
+</button>
 <%= image_tag @comic.main_image, alt: @comic.title %>
+
+
 </hr>
