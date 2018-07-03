@@ -17,16 +17,30 @@
         <% @comics.each do |c| %>
         <div class="col-md-4">
           <div class="card mb-4 box-shadow">
-            <%= image_tag c.thumb_image, alt: c.title, class:"card-img-top" %>
             <div class="card-body">
-              <h5 class="card-title"><%= c.title %></h5>
+            <%= link_to image_tag(c.thumb_image, alt: c.title, class:"card-img-top"), comic_path(c.id) %>
+
+              <h5 class="card-title"><%= link_to c.title, comic_path(c.id) %></h5>
               <p class="card-text"><%= c.description %></p>
               <div class="d-flex justify-content-between align-items-center">
-                <!-- <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div> -->
+                <div class="btn-group">
+
+
+                   <button type="button" class="btn btn-sm btn-outline-secondary">
+                       <%= link_to "Edit", edit_comic_path(c.id), method: :delete %>
+                   </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                      <%= link_to "Delete", comic_path(c.id), method: :delete, data: {confirm: 'Delete Comic?'} %>
+                  </button>
+                </div>
+                <% if c.status == 'published' %>
                 <small class="text-muted">Published <%= distance_of_time_in_words(c.created_at, Time.now) %> Ago</small>
+                <% elsif c.status == 'draft' %>
+                  <small class="text-muted">Draft created at <%= distance_of_time_in_words(c.created_at, Time.now) %> Ago</small>
+                <% else %>
+                    <small class="text-muted">Created <%= distance_of_time_in_words(c.created_at, Time.now) %> Ago</small>
+                <% end %>
+
               </div>
             </div>
           </div>
