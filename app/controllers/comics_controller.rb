@@ -7,6 +7,9 @@ class ComicsController < ApplicationController
 
   def show
     @comic = Comic.find(params[:id])
+    @is_first = @comic == Comic.first ? 'true' : 'false'
+    @is_last = @comic == Comic.last ? 'true' : 'false'
+
   end
 
   def new
