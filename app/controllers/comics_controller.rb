@@ -12,6 +12,10 @@ class ComicsController < ApplicationController
 
   end
 
+  def index
+    @comics = Comic.all.order('created_at desc')
+  end 
+
   def new
     @comic = Comic.new
   end
