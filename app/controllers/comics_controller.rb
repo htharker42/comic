@@ -1,9 +1,9 @@
 class ComicsController < ApplicationController
    before_action :set_comic, only: [:show, :edit, :update, :destroy, :toggle_status]
+   
+   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
    layout "application"
-
-   # access all: [:show ], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, admin: :all
 
   def show
     @comic = Comic.find(params[:id])
