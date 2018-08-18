@@ -5,10 +5,8 @@ atom_feed do |feed|
 	@comics.each do |comic|
 		feed.entry(comic) do |entry|
 			entry.title(comic.title)
-			# entry.content(comic.description)
-			entry.image(comic.thumb_image)
+			entry.content(comic.description)
 			entry.tag!('app:edited', Time.now)
-
 		    entry.author do |author| 
 		    	author.name("A Porter's Tale")
 		    end 
