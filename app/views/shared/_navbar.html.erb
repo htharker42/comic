@@ -22,23 +22,6 @@
                <%= link_to "Register", new_user_registration_path %>
             <% end %>
 
-            <%= link_to image_tag("rss.png", size: "24x24", alt: "RSS Feed"), comics_url(format: "atom") %>
-
-             <% title_for_url = @comic.title.gsub(" ", '%20') %>
-
-
-            <% twitter_link = "https://twitter.com/intent/tweet?text=#{@comic.title}&url=http%3A%2F%2Fwww.aporterstale.com%2Fcomic%2F#{@comic.id}&original_referer=https%3A%2F%2Ftwitter.com%2Fshare%3Furl%3Dhttp%3A%2F%2Fwww.aporterstale.com%2F#{@comic.id}%26text%3D#{title_for_url}%2523aporterstale"%>
-
-            <% facebook_link = 
-            "https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.aporterstale.com%2Fcomic%2F#{@comic.id}&t=#{title_for_url}"
-            %>
-
-            <%= link_to image_tag("twitter.png", size: "24x24", alt: "Twitter"), twitter_link %>
-
-
-            <%= link_to image_tag("facebook.png", size: "24x24", alt: "Facebook"), facebook_link %>
-
-
         </form>
       </div>
     </nav>
