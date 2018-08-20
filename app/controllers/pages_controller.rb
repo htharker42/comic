@@ -2,6 +2,9 @@ class PagesController < ApplicationController
 
   def home
     @comic = Comic.last
+    @is_first = 'false'
+    @is_last = 'true' 
+
 
   end
 
