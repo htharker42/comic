@@ -1,0 +1,33 @@
+
+             <% title_for_url = @comic.title.gsub(" ", '%20') %>
+
+            <% twitter_link = "https://twitter.com/intent/tweet?text=#{@comic.title}&url=http%3A%2F%2Fwww.aporterstale.com%2Fcomic%2F#{@comic.id}&original_referer=https%3A%2F%2Ftwitter.com%2Fshare%3Furl%3Dhttp%3A%2F%2Fwww.aporterstale.com%2F#{@comic.id}%26text%3D#{title_for_url}%2523aporterstale"%>
+
+            <% facebook_link = 
+            "https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.aporterstale.com%2Fcomic%2F#{@comic.id}&t=#{title_for_url}"
+            %>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">                
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+            		<%= link_to image_tag("rss.png", size: "24x24", alt: "RSS Feed"), comics_url(format: "atom"), class: "btn btn-sm btn-outline-primary" %>
+
+            		<%= link_to image_tag("twitter.png", size: "24x24", alt: "Twitter"), twitter_link, class: "btn btn-sm btn-outline-primary" %>
+
+            		<%= link_to image_tag("facebook.png", size: "24x24", alt: "Facebook"), facebook_link, class: "btn btn-sm btn-outline-primary" %>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+

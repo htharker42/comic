@@ -1,5 +1,7 @@
 
 <p class="cover-heading"><p><%= @comic.title %> </p></p>
 <p class="lead">
+	<%= render "shared/share_nav" %>
+	<%= render "shared/comic_nav" %>
   <%= image_tag @comic.main_image, alt: @comic.title %>
 </p>
