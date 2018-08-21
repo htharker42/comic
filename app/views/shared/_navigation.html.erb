@@ -1,17 +1,15 @@
-<div class="col-md-12">
-  <div class="card mb-4 box-shadow">                
+<div class="col-md-12">          
     <div class="card-body">
       <div class="d-flex justify-content-between align-items-center">
+
     <%= render "shared/comic_nav" %>
         
-    <% if current_user && current_user.has_roles?(:site_admin) %>
-
-      <%= render "shared/admin_tools" %>
-
-    <% end -%> 
+      <% if current_user && current_user.has_roles?(:site_admin) %>
+        <%= render "shared/admin_tools" %>
+      <% end -%> 
 
     <%= render "shared/share_nav" %>
+
       </div>
     </div>
-  </div>
 </div>

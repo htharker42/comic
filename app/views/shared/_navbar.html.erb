@@ -1,7 +1,7 @@
 
 <header class="masthead mb-auto">
   <div class="inner">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top"style="background-color: #260b59">
       <a class="navbar-brand" href="#">A Porter's Tale</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,12 +14,14 @@
 
         <form class="form-inline my-2 my-lg-0">
           <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Donate</button>
+          
           <% if current_user %>
-            <%= link_to "logout", destroy_user_session_path, method: :delete %>
+            <%= link_to "logout", destroy_user_session_path, method: :delete, class: "btn btn-info my-2 my-sm-0 m-md-1"%>
+
             <% else %>
-               <%= link_to "Login ", new_user_session_path %>
-               <%= link_to "Register", new_user_registration_path %>
+               <%= link_to "Login ", new_user_session_path, class: "btn btn-info my-2 my-sm-0 m-md-1" %>
+
+               <%= link_to "Register", new_user_registration_path, class: "btn btn-info my-2 my-sm-0 m-md-1" %>
             <% end %>
 
         </form>

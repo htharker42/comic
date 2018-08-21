@@ -7,9 +7,8 @@
 "https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.aporterstale.com%2Fcomic%2F#{@comic.id}&t=#{title_for_url}"
 %>
 
-<!--  <div class="d-flex justify-content-between align-items-center">
- -->
-    <div class="btn-group">
+<div class="d-flex justify-content-between align-items-center btn-group">
+
 
 		<%= link_to image_tag("rss.png", size: "24x24", alt: "RSS Feed"), comics_url(format: "atom"), class: "btn btn-sm btn-outline-warning" %>
 
@@ -17,7 +16,6 @@
 
 		<%= link_to image_tag("facebook.png", size: "24x24", alt: "Facebook"), facebook_link, class: "btn btn-sm btn-outline-primary" %>
   </div>
-<!-- </div>
- -->
+
 
 
