@@ -1,44 +1,37 @@
-    <div class="album py-5 bg-light">
-        <div class="container">
 
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">                
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
+  <div class="btn-group">
 
-                    <% if @is_first == 'true' %>
+    <% if @is_first == 'true' %>
 
-                    <%= image_tag "atstart.png", size: "32x32", alt: "At Start"%> 
+    <%= image_tag "atstart.png", size: "32x32", alt: "At Start"%> 
 
-                     <%= image_tag "back_not.png", size: "32x32", alt: "At Start" %> 
+     <%= image_tag "back_not.png", size: "32x32", alt: "At Start" %> 
 
-                    <% else %>
+    <% else %>
 
-                      <%= link_to image_tag("tostart.png", size: "32x32", alt: "Back to Start"), comic_path(1) %>
+      <%= link_to image_tag("tostart.png", size: "32x32", alt: "Back to Start"), comic_path(1) %>
 
-                      <%= link_to image_tag("back.png", size: "32x32", alt: "Back"), comic_path(@comic.id - 1) %>
+      <%= link_to image_tag("back.png", size: "32x32", alt: "Back"), comic_path(@comic.id - 1) %>
 
-                    <% end -%>
+    <% end -%>
 
-                    <% if @is_last == 'true' %>
+    <%= link_to image_tag("random.png", size: "32x32", alt: "Random"), comic_path(rand(10)+1) %>
 
-                      <%= image_tag "atend.png", size: "32x32", alt: "At Start" %> 
+    <% if @is_last == 'true' %>
+      
+      <%= image_tag "forward_not.png", size: "32x32", alt: "At Start" %> 
 
-                       <%= image_tag "forward_not.png", size: "32x32", alt: "At Start" %> 
+      <%= image_tag "atend.png", size: "32x32", alt: "At Start" %> 
 
-                    <% else %>
+    <% else %>
+    
+      <%= link_to image_tag("forward.png", size: "32x32", alt: "Forward"), comic_path(@comic.id + 1) %>
 
-                      <%= link_to image_tag("forward.png", size: "32x32", alt: "Forward"), comic_path(@comic.id + 1) %>
+      <%= link_to image_tag("toend.png", size: "32x32", alt: "Latest Comic"), root_path %>
 
-                      <%= link_to image_tag("toend.png", size: "32x32", alt: "Latest Comic"), root_path %>
+    <% end -%>
+  
+</div>
 
-                    <% end -%>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
+
+

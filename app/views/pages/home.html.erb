@@ -1,7 +1,17 @@
 
-<p class="cover-heading"><p><%= @comic.title %> </p></p>
-<p class="lead">
-	<%= render "shared/share_nav" %>
-	<%= render "shared/comic_nav" %>
-  <%= image_tag @comic.main_image, alt: @comic.title %>
-</p>
+    <div class="album py-5 bg-light">
+        <div class="container">
+			<div class="row">
+				<div class = "col-md-12"
+				<p class="cover-heading">
+					<%= @comic.title %> 
+				</p>
+					<%= render "shared/comic_nav" %>
+
+					<%= render "shared/share_nav" %>
+
+				  <%= image_tag @comic.main_image, alt: @comic.title %>
+				</div>
+		</div>
+	</div>
+</div>

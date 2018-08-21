@@ -1,0 +1,31 @@
+
+   
+<!-- <div class="card-body">
+ -->  
+  <div class="d-flex justify-content-between align-items-center">
+
+    <div class="btn-group">
+
+      <%= link_to image_tag(
+      "edit.png", 
+      size: "32x32", 
+      alt: "Edit"),  edit_comic_path(@comic.id)
+      %>
+
+      <%= link_to image_tag(
+      "delete.png", 
+      size: "32x32", 
+      alt: "Delete"),  
+      comic_path(@comic.id), method: :delete, data: {confirm: 'Delete Comic?'}
+      %>
+
+      <%= link_to image_tag(
+      "new.png", 
+      size: "32x32", 
+      alt: "New"),  
+      new_comic_path
+      %>
+    </div>
+  </div>
+<!-- </div> -->
+

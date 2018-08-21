@@ -4,8 +4,6 @@ class PagesController < ApplicationController
     @comic = Comic.last
     @is_first = 'false'
     @is_last = 'true' 
-
-
   end
 
   def about
