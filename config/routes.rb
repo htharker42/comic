@@ -10,9 +10,9 @@ end
 
 root to: 'pages#home'
 
-get'/about', to: 'pages#about'
+get'/cast', to: 'pages#cast'
 
-get '/contact', to: 'pages#contact'
+get '/author', to: 'pages#author'
 
 get '/news', to: 'pages#news'
 

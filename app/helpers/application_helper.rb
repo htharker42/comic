@@ -9,27 +9,19 @@ module ApplicationHelper
   		[
   		{
   			url: root_path,
-  			title: "Home"
+  			title: "Latest"
   		},
   		{
-  			url: news_path,
-  			title: "News"
+  			url: cast_path,
+  			title: "Cast"
   		},
   		{
-  			url: about_path,
-  			title: "About Me"
-  		},
-  		{
-  			url: '#',
-  			title: "Donate"
+  			url: author_path,
+  			title: "Author"
   		},
   		{
   			url: archive_path,
   			title: "Archive"
-  		},
-  		{
-  			url: contact_path,
-  			title: "Contact"
   		}
   	]
   	end

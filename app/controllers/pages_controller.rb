@@ -6,17 +6,17 @@ class PagesController < ApplicationController
     @is_last = 'true' 
   end
 
-  def about
-  end
-
-  def archive
-    @comics = Comic.all.order('created_at desc')
+  def author
   end
 
   def news
   end
 
-  def contact
+  def cast
+  end
+
+  def archive
+    @comics = Comic.all.order('created_at desc')
   end
 
 end
