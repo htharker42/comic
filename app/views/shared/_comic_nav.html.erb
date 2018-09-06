@@ -2,36 +2,21 @@
 <div class="d-flex justify-content-between align-items-center btn-group">
 
     <% if @is_first == 'true' %>
-
-    <%= image_tag "atstart.png", size: "32x32", alt: "At Start"%> 
-
-     <%= image_tag "back_not.png", size: "32x32", alt: "At Start" %> 
+      <%= fa_stacked_icon "step-backward", alt: "Back to Start", class: "nav_button_comic_disabled" %>
+      <%= fa_stacked_icon "angle-left", alt: "Back to Start", class: "nav_button_comic_disabled" %>
 
     <% else %>
-
-      <%= link_to image_tag("tostart.png", size: "32x32", alt: "Back to Start"), comic_path(1) %>
-
-      <%= link_to image_tag("back.png", size: "32x32", alt: "Back"), comic_path(@comic.id - 1) %>
-
+      <%= link_to (fa_stacked_icon "step-backward", alt: "Back to Start", class: "nav_button_comic"), comic_path(1) %>
+      <%= link_to (fa_stacked_icon "angle-left", alt: "Back", class: "nav_button_comic"), comic_path(@comic.id - 1) %>
     <% end -%>
-
-    <%= link_to image_tag("random.png", size: "32x32", alt: "Random"), comic_path(rand(10)+1) %>
+    <%= link_to (fa_stacked_icon "random", class: "nav_button_comic"), comic_path(rand(10)+1) %>
 
     <% if @is_last == 'true' %>
-      
-      <%= image_tag "forward_not.png", size: "32x32", alt: "At Start" %> 
-
-      <%= image_tag "atend.png", size: "32x32", alt: "At Start" %> 
-
+      <%= fa_stacked_icon "angle-right", alt: "Forward", class: "nav_button_comic_disabled" %>
+      <%= fa_stacked_icon "step-forward", alt: "Latest", class: "nav_button_comic_disabled" %>
     <% else %>
-    
-      <%= link_to image_tag("forward.png", size: "32x32", alt: "Forward"), comic_path(@comic.id + 1) %>
-
-      <%= link_to image_tag("toend.png", size: "32x32", alt: "Latest Comic"), root_path %>
-
+      <%= link_to (fa_stacked_icon "angle-right", alt: "Forward", class: "nav_button_comic"), comic_path(@comic.id + 1) %>
+      <%= link_to (fa_stacked_icon "step-forward", alt: "Latest", class: "nav_button_comic"), root_path %>
     <% end -%>
-  
+
 </div>
-
-
-
