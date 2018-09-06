@@ -144,10 +144,25 @@ body {
   background-color: $color-4;
 }
 
+.share_button{
+  color: $color-5;
+  font-size: 1.3rem;
+  :hover{
+    color: $color-1;
+    font-size: 1.3rem;
+  }
+}
+
 .nav_button_comic {
   color: $color-3;
+  font-size: 1.3rem;
+  :hover{
+    color: $color-1;
+    font-size: 1.3rem;
+  }
 }
 
 .nav_button_comic_disabled {
   color: gray;
+  font-size: 1.3rem;
 }
