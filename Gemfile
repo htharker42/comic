@@ -58,8 +58,16 @@ gem 'jquery-rails' #required for bootstrap navigation menu annimations
 gem 'jquery-ui-rails'
 
 gem 'friendly_id', '~> 5.1.0'
+
+#authentication
 gem 'devise', '~> 4.4', '>= 4.4.3'
+#style
 gem 'bootstrap', '~> 4.1.0'
+#file transmission
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'
+#authorization
 gem 'petergate', '~> 1.8', '>= 1.8.1'
+#copywrite maintainence
 gem 'harker_view_tool', '~> 0.1.0'
+#icons 
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'

@@ -14,14 +14,17 @@
 
         <form class="form-inline my-2 my-lg-0">
           <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
-          
+
           <% if current_user %>
+
             <%= link_to "logout", destroy_user_session_path, method: :delete, class: "btn btn-info my-2 my-sm-0 m-md-1"%>
 
             <% else %>
-               <%= link_to "Login ", new_user_session_path, class: "btn btn-info my-2 my-sm-0 m-md-1" %>
 
-               <%= link_to "Register", new_user_registration_path, class: "btn btn-info my-2 my-sm-0 m-md-1" %>
+            <%= link_to image_tag("patreon.png", size:"128x32"),
+              "http://www.patreon.com"
+              %>
+
             <% end %>
 
         </form>
