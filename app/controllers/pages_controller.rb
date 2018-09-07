@@ -3,7 +3,8 @@ class PagesController < ApplicationController
   def home
     @comic = Comic.last
     @is_first = 'false'
-    @is_last = 'true' 
+    @is_last = 'true'
+    @blog = Blog.last
   end
 
   def author
