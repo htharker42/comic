@@ -5,13 +5,11 @@
     <div class="row">
       <div class="col-md-9">
         <h3 class="position-relative display-4 font-weight-normal m-md-2">
-          <%= @comic.title %> 
+          <%= @comic.title %>
         </h3>
     </div>
       <div class="col-md-3 p-md-3 text-right" >
-        <button class="btn btn-warning" type="submit">
-          Support A Porter's Tale!
-        </button>
+
       </div>
    </div>
  </div>
@@ -19,11 +17,11 @@
     <div class="comic-panel-container position-relative overflow-hidden  m-md-3 text-center">
 
       <%= render "shared/navigation" %>
-      
+
       <%= image_tag @comic.main_image, width: "95%", height: "1200px", alt: @comic.title, title: @comic.description %>
-      
+
       <%= render "shared/navigation" %>
-    
+
     </div>
     <hr>
     <div class="container">
