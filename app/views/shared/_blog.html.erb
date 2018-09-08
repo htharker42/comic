@@ -4,10 +4,12 @@
   <div class="col-md-8">
     <div class="blog-post">
         <h2 class="blog-post-title large-font"><%= @blog.title %></h2>
-          <%= link_to "New", new_blog_path %>
-          <%= link_to "Edit", edit_blog_path(@blog.id) %>
-          <%= link_to "Delete", blog_path(@blog.id), method: :delete, data: {confirm: "Delete Blog"} %>
-
+        <% if current_user && current_user.has_roles?(:site_admin) %>
+          <p><strong>  <%= link_to "New", new_blog_path %> |
+            <%= link_to "Edit", edit_blog_path(@blog.id) %> |
+            <%= link_to "Delete", blog_path(@blog.id), method: :delete, data: {confirm: "Delete Blog"} %>
+          </p></strong>
+        <% end %>
         <p class="blog-post-meta small-font"><%= distance_of_time_in_words_to_now(@blog.created_at) %> ago. <a href="#"> by Peggy</a></p>
         <div class="small-font">
         <p><%= @blog.body %></p>
