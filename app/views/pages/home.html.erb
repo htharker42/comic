@@ -39,20 +39,7 @@
 
           </div>
     <hr>
-    <div class="container">
-      <div class="row">
-
-      <div class="col-md-8">
-        <div class="blog-post">
-            <h2 class="blog-post-title large-font"><%= @blog.title %></h2>
-            <p class="blog-post-meta small-font"><%= distance_of_time_in_words_to_now(@blog.created_at) %> ago. <a href="#"> by Peggy</a></p>
-            <div class="small-font">
-            <p><%= @blog.body %></p>
-
-          </div>
-          </div><!-- /.blog-post -->
-        </div>
-
+     <%= render 'shared/blog' %>
       <div clas="col-md-4">
         <%= image_tag "https://via.placeholder.com/300x250",alt: "placeholder for ad", title: "placeholder for ad", class: "m-md-2" %>
         <br>

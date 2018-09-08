@@ -8,11 +8,8 @@ resources :comics do
   end
 end
 
-resources :blogs do
-  member do
-    get :toggle_status
-  end
-end
+resources :blogs, only: [:edit, :create, :new, :update, :destroy]
+
 root to: 'pages#home'
 
 get'/cast', to: 'pages#cast'
